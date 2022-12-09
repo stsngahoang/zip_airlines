@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  db_test:
+    container_name: pg13
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+  app:
+    build:
+      context: .
+      args:
+        BUILD_ENV: test
+    image: zip-airline-test:v1
+    command: pytest tests --cov --cov-report=xml --cov-report=term
+    volumes:
+      - ./src/:/app/
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=foo
+      - DATABASE_HOST=db_test
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=postgres
+      - DJANGO_SETTINGS_MODULE=config.settings.test
+    depends_on:
+      - db_test

@@ -7,10 +7,10 @@ This is project for ZipAirline Challenger
 
 Method | Endpoint | Functionanlity
 --- | --- | ---
-GET | `/airplane/` | Get list airplane
-POST | `/airplane/` | Create airplane
-PUT | `/airplane/<airplane_id>` | Update airplane detail
-DELETE | `/airplane/<airplane_id>` | Delete airplane
+GET | `/airplanes/` | Get list airplane
+POST | `/airplanes/` | Create airplane
+PUT | `/airplanes/<airplane_id>` | Update airplane detail
+DELETE | `/airplanes/<airplane_id>` | Delete airplane
 POST | `/airplanes/create_list_airplane/` | Create or update list of airplane
 
 ## Installation

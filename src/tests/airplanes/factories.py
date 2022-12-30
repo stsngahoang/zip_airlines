@@ -2,15 +2,15 @@ import random
 
 import factory
 
-from airplanes.models import AirPlane
+from airplanes.models import Airplane
 
 
-class DefaultAirPlaneFactory(factory.django.DjangoModelFactory):
+class DefaultAirplaneFactory(factory.django.DjangoModelFactory):
     """
-    Default AirPlaneFactory
+    Default AirplaneFactory
     """
 
     class Meta:
-        model = AirPlane
+        model = Airplane
 
     passengers = random.randint(100, 1000)

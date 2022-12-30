@@ -5,14 +5,14 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from .factories import DefaultAirPlaneFactory
+from .factories import DefaultAirplaneFactory
 
 
 class TestAirplaneView(APITestCase):
     @pytest.mark.django_db
     def setUp(self) -> None:
         super().setUp()
-        self.new_airplane = DefaultAirPlaneFactory()
+        self.new_airplane = DefaultAirplaneFactory()
 
     def test_can_get_list_airplane(self):
         """
